@@ -214,3 +214,6 @@ class TropicspiderSpider(scrapy.Spider):
             # Try to find GTIN in another way if the first method fails
             gtin = response.xpath('//span[@class="gtin"]/text()').get()  # Another example
         return gtin
+
+
+    # scrapy crawl tropicSpider -O tropicItems.json - komanda za pokretanje i cuvanje u pomenuti fajl

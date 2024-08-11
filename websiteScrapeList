@@ -1,0 +1,40 @@
+format snimanja podataka u jsonu je: {
+    'name': String,
+    'price': String trenutno, potrebno formatiranje u float u skorijoj buducnosti,
+    'category': String,
+    'ean': String trenutno, potrebno formatiranje u int u skorijoj buducnosti,
+    'url': String,
+    'img': String,
+}
+
+
+
+
+Sajtovi koji su u procesu obrade {
+    https://technoshop.ba/proizvodi&odcijene=4.40&docijene=47999.00&prikaz=limit36&sortiranje=sortSuggested&stranica=1
+    3dbox.ba
+}
+
+
+
+
+
+
+
+infocom.ba/?s=
+https://genelec.ba/manufacturer/all
+https://biscomm.net/radnja/
+https://mintict.com/shop/page/1/?count=48
+https://deltapcshop.com/asortiman/pretraga?page=1&brands=&order=ordered_desc&article_on_action=&article_is_available=&article_is_not_available=&price_min=&price_max=&article_is_hot=
+https://itshop.ba/prodavnica/page/1/?product_count=60
+https://www.mediamarket.rs.ba/index.php/artikli?limit=200&start=0
+https://www.digiteh.com/product/category - bice zajebano, ne mijenja se url pri ucitavanju artikala
+imtec.ba (federacija)
+eastcode.net / wec.eastcode.biz
+https://www.abcshop.ba/trgovina/?orderby=popularity
+https://doper.ba/page/1/?count=108&s&post_type=product
+https://shop.imel.ba/shop/
+https://pcmarket.ba/?orderby=popularity&paged=1&count=36&s=&post_type=product&product_cat=0
+
+
+

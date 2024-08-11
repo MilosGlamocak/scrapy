@@ -2,6 +2,7 @@ format snimanja podataka u jsonu je: {
     'name': String,
     'price': String trenutno, potrebno formatiranje u float u skorijoj buducnosti,
     'category': String,
+    'subcategory': String,
     'ean': String trenutno, potrebno formatiranje u int u skorijoj buducnosti,
     'url': String,
     'img': String,
@@ -18,7 +19,7 @@ Sajtovi koji su u procesu obrade {
 
 
 
-
+https://mobilnitelefoni.ba/
 
 
 infocom.ba/?s=

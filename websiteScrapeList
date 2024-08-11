@@ -10,10 +10,14 @@ format snimanja podataka u jsonu je: {
 
 
 
-
-Sajtovi koji su u procesu obrade {
+Sajtovi koji su zavrseni i cekaju provjeru {
     https://technoshop.ba/proizvodi&odcijene=4.40&docijene=47999.00&prikaz=limit36&sortiranje=sortSuggested&stranica=1
     3dbox.ba
+}
+
+
+Sajtovi koji su u procesu obrade {
+    
 }
 
 

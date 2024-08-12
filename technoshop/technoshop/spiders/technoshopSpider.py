@@ -7,7 +7,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from scrapy.selector import Selector
 import math
-from jsonPriceParser import parse_price
 
 class TechnoshopSpider(scrapy.Spider):
     name = "technoshopSpider"

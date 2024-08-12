@@ -8,10 +8,9 @@ from selenium.webdriver.common.by import By
 from scrapy.selector import Selector
 import math
 from bs4 import BeautifulSoup
-import re
 
 class A3dboxSpider(scrapy.Spider):
-    name = "3dboxSpider"
+    name = "a3dboxSpider"
     allowed_domains = ["3dbox.ba"]
     start_urls = [
         "https://3dbox.ba/product-category/televizori-i-oprema/televizori/page/1/?orderby=menu_order",
@@ -181,6 +180,7 @@ class A3dboxSpider(scrapy.Spider):
 
         # Add the additional details to the existing data
         yield {
+            'shop': '3dbox',
             'name': response.meta['name'],
             'price': current_price,
             'category': category,
@@ -193,4 +193,4 @@ class A3dboxSpider(scrapy.Spider):
     def closed(self, reason):
         self.driver.quit()
 
-# scrapy crawl 3dbox -O threedboxItems.json
+# scrapy crawl a3dboxSpider -O threedboxItems.json

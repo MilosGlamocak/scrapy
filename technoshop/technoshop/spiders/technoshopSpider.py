@@ -93,6 +93,7 @@ class TechnoshopSpider(scrapy.Spider):
 
         # Add the additional details to the existing data
         yield {
+            'shop': 'technoshop',
             'name': response.meta['name'],
             'price': newPrice,
             'category': category,

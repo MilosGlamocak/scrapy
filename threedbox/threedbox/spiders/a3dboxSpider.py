@@ -181,6 +181,7 @@ class A3dboxSpider(scrapy.Spider):
 
         # Add the additional details to the existing data
         yield {
+            'shop': '3dbox',
             'name': response.meta['name'],
             'price': current_price,
             'category': category,

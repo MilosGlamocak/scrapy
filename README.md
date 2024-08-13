@@ -1,3 +1,4 @@
-cd scrapy;
-python scrapyRunner.py
+cd scrapy;\n
+python scrapeMultiple.py;\n
+python combineItems.py
 

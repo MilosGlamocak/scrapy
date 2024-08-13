@@ -1,4 +1,4 @@
-cd scrapy;\n
-python scrapeMultiple.py;\n
+cd scrapy;
+python scrapeMultiple.py;
 python combineItems.py
 

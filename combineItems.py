@@ -2,7 +2,7 @@ import json
 from datetime import datetime
 import os
 
-files = ['technoshop/technoshopItems.json', 'threedbox/threedboxItems.json']
+files = ['technoshop/technoshopItems.json', 'threedbox/threedboxItems.json', 'deltapc/deltapcItems.json']
 
 def merge_json_files(input_files, output_filename):
     result = []

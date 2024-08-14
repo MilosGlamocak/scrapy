@@ -3,7 +3,8 @@ import subprocess
 def run_scrapy_spiders():
     commands = [
         'cd technoshop && scrapy crawl technoshopSpider -O technoshopItems.json',
-        'cd threedbox && scrapy crawl a3dboxSpider -O threedboxItems.json'
+        'cd threedbox && scrapy crawl a3dboxSpider -O threedboxItems.json',
+        'cd deltapc && scrapy crawl deltapcSpider -O deltapcItems.json'
     ]
 
     for command in commands:

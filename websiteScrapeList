@@ -15,7 +15,6 @@ Sajtovi koji su zavrseni i cekaju provjeru {
     https://mintict.com/shop/page/1/?count=48
     https://technoshop.ba/proizvodi&odcijene=4.40&docijene=47999.00&prikaz=limit36&sortiranje=sortSuggested&stranica=1
     3dbox.ba
-    // 3dbox i technoshop trebaju prepravku u outputu json fajla, trebaju da pokazuju obe cijene
 }
 
 

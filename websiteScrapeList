@@ -11,9 +11,10 @@ format snimanja podataka u jsonu je: {
 
 
 Sajtovi koji su zavrseni i cekaju provjeru {
+    https://deltapcshop.com/asortiman/pretraga?page=1&brands=&order=ordered_desc&article_on_action=&article_is_available=&article_is_not_available=&price_min=&price_max=&article_is_hot=
+    https://mintict.com/shop/page/1/?count=48
     https://technoshop.ba/proizvodi&odcijene=4.40&docijene=47999.00&prikaz=limit36&sortiranje=sortSuggested&stranica=1
     3dbox.ba
-    https://deltapcshop.com/asortiman/pretraga?page=1&brands=&order=ordered_desc&article_on_action=&article_is_available=&article_is_not_available=&price_min=&price_max=&article_is_hot=
 }
 
 

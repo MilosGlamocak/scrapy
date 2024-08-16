@@ -7,11 +7,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from scrapy.selector import Selector
 from bs4 import BeautifulSoup
+from ..utils.priceExtract import extractPrices
 
 class DeltapcspiderSpider(scrapy.Spider):
     name = "deltapcSpider"
     allowed_domains = ["deltapcshop.com"]
-    start_urls = ["https://deltapcshop.com/asortiman/pretraga?page=1"]
+    start_urls = ["https://deltapcshop.com/asortiman/pretraga?page=1"
+        
+        ]
 
     def __init__(self, *args, **kwargs):
         super(DeltapcspiderSpider, self).__init__(*args, **kwargs)
@@ -70,20 +73,11 @@ class DeltapcspiderSpider(scrapy.Spider):
         # Extract price HTML and log it for debugging
         price_html = response.css('div.price').get()
         self.logger.info(f'Price HTML: {price_html}')
-        current_price = None
-        sale_price = None
-
+        regularPrice = None
+        salePrice = None
         if price_html:
-            soup = BeautifulSoup(price_html, 'html.parser')
-            regular_price_elem = soup.select_one('.regular')
-            sale_price_elem = soup.select_one('.sale')
-            
-            if regular_price_elem:
-                current_price = regular_price_elem.get_text(strip=True)
-                sale_price = sale_price_elem.get_text(strip=True) if sale_price_elem else None
-            else:
-                current_price = sale_price_elem.get_text(strip=True) if sale_price_elem else None
-                sale_price = None
+            regularPrice = extractPrices(price_html)["regular"]
+            salePrice = extractPrices(price_html)["sale"]
         
         # Extract and clean image URL
         #img_urls = response.meta['img'].split(' ')
@@ -92,7 +86,7 @@ class DeltapcspiderSpider(scrapy.Spider):
         yield {
             'shop': 'deltapc',
             'name': response.meta['name'],
-            'price': {'regular': current_price, 'sale': sale_price},
+            'price': {'regular': regularPrice, 'sale': salePrice},
             'category': category,
             'subcategory': subcategory,
             'ean': ean,

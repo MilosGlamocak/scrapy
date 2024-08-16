@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from scrapy.selector import Selector
 import math
+from ..utils.priceExtract import extractPrices
 
 class TechnoshopSpider(scrapy.Spider):
     name = "technoshopSpider"
@@ -85,16 +86,21 @@ class TechnoshopSpider(scrapy.Spider):
         category = response.css('div.breadcrumb ul li:nth-of-type(2) a::text').get()
         subcategory = response.css('div.breadcrumb ul li:nth-of-type(3) a::text').get()
         ean = response.css('div.product__title h2::text').get()
-        newPrice = response.css('div.cp__np::text').get()
 
-        if newPrice:
-            newPrice = newPrice.strip()
+        price_html = response.css('div.cool__price').get()
+        ignoredItem = response.css('div.cp__op-discount').get() or None
+        self.logger.info(f'Price HTML: {price_html}')
+        regularPrice = None
+        salePrice = None
+        if price_html:
+            regularPrice = extractPrices(price_html, ignoredItem)["regular"]
+            salePrice = extractPrices(price_html, ignoredItem)["sale"]
 
         # Add the additional details to the existing data
         yield {
             'shop': 'technoshop',
             'name': response.meta['name'],
-            'price': newPrice,
+            'price': {"regular": regularPrice, "sale": salePrice},
             'category': category,
             'subcategory': subcategory,
             'ean': ean,

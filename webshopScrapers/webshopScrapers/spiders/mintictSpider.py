@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from scrapy.selector import Selector
 from bs4 import BeautifulSoup
+from ..utils.priceExtract import extractPrices
 
 class MintictspiderSpider(scrapy.Spider):
     name = "mintictSpider"
@@ -71,11 +72,11 @@ class MintictspiderSpider(scrapy.Spider):
         # Extract price HTML and log it for debugging
         price_html = response.css('p.price').get()
         self.logger.info(f'Price HTML: {price_html}')
+        regularPrice = None
+        salePrice = None
         if price_html:
-            soup = BeautifulSoup(price_html, 'html.parser')
-            current_price = soup.select_one('.woocommerce-Price-amount').get_text(strip=True) if soup.select_one('.woocommerce-Price-amount') else None
-        else:
-            current_price = None
+            regularPrice = extractPrices(price_html)["regular"]
+            salePrice = extractPrices(price_html)["sale"]
 
         '''if price_html:
             soup = BeautifulSoup(price_html, 'html.parser')
@@ -96,7 +97,7 @@ class MintictspiderSpider(scrapy.Spider):
         yield {
             'shop': 'mintict',
             'name': response.meta['name'],
-            'price': {'regular': current_price, 'sale': None},
+            'price': {'regular': regularPrice, 'sale': salePrice},
             'category': category,
             #'subcategory': subcategory,
             'ean': ean,

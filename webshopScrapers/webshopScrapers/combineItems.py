@@ -9,6 +9,7 @@ files = [
     'scrapedItems/technoshopItems.json', 
     'scrapedItems/itshopItems.json',
     'scrapedItems/mediamarketItems.json',
+    'scrapedItems/mobilnitelefoniItems.json',
     ]
 
 def merge_json_files(input_files, output_filename):

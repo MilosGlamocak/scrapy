@@ -9,8 +9,9 @@ def run_scrapy_spiders():
     commands = [
         'scrapy crawl technoshopSpider -O technoshopItems.json',
         'scrapy crawl threedboxSpider -O threedboxItems.json',
-        'scrapy crawl deltapcSpider -O deltapcItems.json',
         'scrapy crawl mintictSpider -O mintictItems.json',
+        'scrapy crawl itshopSpider -O itshopItems.json',
+        'scrapy crawl deltapcSpider -O deltapcItems.json',
     ]
 
     '''

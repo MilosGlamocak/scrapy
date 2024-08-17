@@ -12,6 +12,7 @@ def run_scrapy_spiders():
         'scrapy crawl mintictSpider -O scrapedItems/mintictItems.json',
         'scrapy crawl itshopSpider -O scrapedItems/itshopItems.json',
         'scrapy crawl mediamarketSpider -O scrapedItems/mediamarketItems.json',
+        'scrapy crawl mobilnitelefoniSpider -O scrapedItems/mobilnitelefoniItems.json',
         'scrapy crawl deltapcSpider -O scrapedItems/deltapcItems.json',
     ]
 

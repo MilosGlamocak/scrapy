@@ -3,12 +3,12 @@ from datetime import datetime
 import os
 
 files = [
-    'threedboxItems.json',
-    'mintictItems.json', 
-    'deltapcItems.json', 
-    'technoshopItems.json', 
-    'itshopItems.json',
-    'mediamarketItems.json',
+    'scrapedItems/threedboxItems.json',
+    'scrapedItems/mintictItems.json', 
+    'scrapedItems/deltapcItems.json', 
+    'scrapedItems/technoshopItems.json', 
+    'scrapedItems/itshopItems.json',
+    'scrapedItems/mediamarketItems.json',
     ]
 
 def merge_json_files(input_files, output_filename):
@@ -25,7 +25,7 @@ def merge_json_files(input_files, output_filename):
 
 # Generate a new file name based on the current timestamp
 timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-output_filename = f'merged_items_{timestamp}.json'
+output_filename = f'scrapedItems/merged_items_{timestamp}.json'
 
 merge_json_files(files, output_filename)
 

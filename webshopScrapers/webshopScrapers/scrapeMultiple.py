@@ -7,12 +7,12 @@ def run_scrapy_spider(command):
 
 def run_scrapy_spiders():
     commands = [
-        'scrapy crawl technoshopSpider -O technoshopItems.json',
-        'scrapy crawl threedboxSpider -O threedboxItems.json',
-        'scrapy crawl mintictSpider -O mintictItems.json',
-        'scrapy crawl itshopSpider -O itshopItems.json',
-        'scrapy crawl mediamarketSpider -O mediamarketItems.json',
-        'scrapy crawl deltapcSpider -O deltapcItems.json',
+        'scrapy crawl technoshopSpider -O scrapedItems/technoshopItems.json',
+        'scrapy crawl threedboxSpider -O scrapedItems/threedboxItems.json',
+        'scrapy crawl mintictSpider -O scrapedItems/mintictItems.json',
+        'scrapy crawl itshopSpider -O scrapedItems/itshopItems.json',
+        'scrapy crawl mediamarketSpider -O scrapedItems/mediamarketItems.json',
+        'scrapy crawl deltapcSpider -O scrapedItems/deltapcItems.json',
     ]
 
     '''

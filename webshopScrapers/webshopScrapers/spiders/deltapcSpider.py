@@ -12,7 +12,7 @@ from ..utils.priceExtract import extractPrices
 class DeltapcspiderSpider(scrapy.Spider):
     name = "deltapcSpider"
     allowed_domains = ["deltapcshop.com"]
-    start_urls = ["https://deltapcshop.com/asortiman/pretraga?page=1"
+    start_urls = ["https://deltapcshop.com/asortiman/pretraga?page=1&search=&brands=&order=retail_price_desc&article_on_action=&article_is_available=&article_is_not_available=&price_min=&price_max=&article_is_hot="
         
         ]
 
@@ -57,7 +57,7 @@ class DeltapcspiderSpider(scrapy.Spider):
         # Pagination by incrementing page number in the URL
         if products:
             self.current_page += 1
-            next_page_url = f"https://deltapcshop.com/asortiman/pretraga?page={self.current_page}"
+            next_page_url = f"https://deltapcshop.com/asortiman/pretraga?page={self.current_page}&search=&brands=&order=retail_price_desc&article_on_action=&article_is_available=&article_is_not_available=&price_min=&price_max=&article_is_hot="
             self.logger.info(f"Requesting next page: {next_page_url}")
             yield scrapy.Request(next_page_url, callback=self.parse)
         else:

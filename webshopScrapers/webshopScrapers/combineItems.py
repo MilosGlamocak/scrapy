@@ -8,6 +8,7 @@ files = [
     'deltapcItems.json', 
     'technoshopItems.json', 
     'itshopItems.json',
+    'mediamarketItems.json',
     ]
 
 def merge_json_files(input_files, output_filename):

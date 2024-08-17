@@ -11,6 +11,7 @@ def run_scrapy_spiders():
         'scrapy crawl threedboxSpider -O threedboxItems.json',
         'scrapy crawl mintictSpider -O mintictItems.json',
         'scrapy crawl itshopSpider -O itshopItems.json',
+        'scrapy crawl mediamarketSpider -O mediamarketItems.json',
         'scrapy crawl deltapcSpider -O deltapcItems.json',
     ]
 

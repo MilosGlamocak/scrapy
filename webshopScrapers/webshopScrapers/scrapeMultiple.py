@@ -3,7 +3,12 @@ from concurrent.futures import ThreadPoolExecutor
 import time
 
 def run_scrapy_spider(command):
-    subprocess.run(command, shell=True, check=True)
+    command = command.replace('scrapy', r'C:\Users\WINDOWS11\AppData\Roaming\Python\Python313\Scripts\scrapy.exe')
+    try:
+        subprocess.run(command, shell=True, check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error occurred: {e}")
+        print(f"Command output: {e.output}")
 
 def run_scrapy_spiders():
     commands = [
